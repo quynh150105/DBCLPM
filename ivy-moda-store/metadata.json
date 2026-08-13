@@ -1,0 +1,6 @@
+{
+  "name": "Ivy Moda Store",
+  "description": "Website mua sắm thời trang cao cấp giống Ivy Moda tích hợp đầy đủ tính năng tra cứu showroom, bộ lọc kích cỡ, giỏ hàng, tính phí giao hàng và thanh toán VietQR.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
