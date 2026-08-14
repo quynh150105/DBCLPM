@@ -8,6 +8,7 @@ const sqlPort = Number(process.env.SQL_PORT);
 const sqlDbName = process.env.SQL_DB_NAME;
 const user = process.env.SQL_USER;
 const password = process.env.SQL_PASSWORD;
+const ssl = process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: false } : false;
 
 if (!sqlHost) {
   throw new Error("SQL_HOST must be set in environment variables.");
@@ -36,9 +37,7 @@ export default defineConfig({
     user,
     password,
     database: sqlDbName,
-    ssl: {
-      rejectUnauthorized: false,
-    },
+    ssl,
   },
   verbose: true,
 });

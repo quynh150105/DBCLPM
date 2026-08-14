@@ -4,15 +4,14 @@ import pg from 'pg';
 import * as schema from './schema.ts';
 
 const { Pool } = pg;
+const ssl = process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: false } : false;
 
 export const createPool = () => {
   if (process.env.DATABASE_URL) {
     return new Pool({
       connectionString: process.env.DATABASE_URL,
       connectionTimeoutMillis: 15000,
-      ssl: {
-        rejectUnauthorized: false
-      }
+      ssl,
     });
   }
   return new Pool({

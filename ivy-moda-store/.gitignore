@@ -7,3 +7,4 @@ coverage/
 .env*
 !.env.example
 ivy-modal-key.json
+docs/
